@@ -1,0 +1,12 @@
+A demo of calling minimal rust from C
+
+```
+./make.sh
+```
+
+`caller-check` is built with overflow checking, `caller` without. The checking
+build requires the panic handler from the static lib. No-checking can work with
+just the object file, unsure if there's an easy way to extract/emit it.
+
+https://docs.rust-embedded.org/book/interoperability/rust-with-c.html
+https://os.phil-opp.com/freestanding-rust-binary/#the-eh-personality-language-item

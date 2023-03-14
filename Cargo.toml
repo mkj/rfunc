@@ -1,0 +1,25 @@
+[package]
+name = "rfunc"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "rfunc"
+crate-type = ["staticlib"] # Creates static lib
+
+[dependencies]
+
+# cargo build 
+[profile.dev]
+panic = "abort"
+
+# cargo build --release
+[profile.release]
+panic = "abort"
+
+# cargo build --profile releas-check
+[profile.release-check]
+inherits = "release"
+overflow-checks = true
